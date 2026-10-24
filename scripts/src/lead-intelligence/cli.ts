@@ -112,7 +112,7 @@ async function main(): Promise<void> {
       baseUrl: options.baseUrl,
       model: options.model,
       batchSize: options.batchSize,
-      apiKey: process.env.AI_API_KEY,
+      apiKey: process.env.AI_API_KEY ?? process.env.OPENAI_API_KEY,
     });
     results = enriched.results;
     aiStats = enriched.stats;

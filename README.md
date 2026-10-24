@@ -13,7 +13,7 @@ pnpm --filter @workspace/scripts test
 pnpm --filter @workspace/scripts typecheck
 ```
 
-To use a local Ollama model, run `ollama serve` and `ollama pull llama3.2`, then add `--ai`. AI requests are sent in batches of 10 to `http://localhost:11434/v1/chat/completions`. Select another model with `--model`, or an OpenAI-compatible endpoint with `--base-url`. For a remote endpoint, provide `AI_API_KEY` through the shell environment if required; never put it in the CSV or source.
+To use a local Ollama model, run `ollama serve` and `ollama pull llama3.2`, then add `--ai`. AI requests are sent in batches of 10 to `http://localhost:11434/v1/chat/completions`. Select another model with `--model`, or an OpenAI-compatible endpoint with `--base-url`. For a remote OpenAI-compatible endpoint, configure `OPENAI_API_KEY` or `AI_API_KEY` as a Replit Secret if required; never put it in the CSV or source.
 
 ## Rubric and limits
 
