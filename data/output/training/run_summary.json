@@ -1,0 +1,33 @@
+{
+  "input_file": "/home/runner/workspace/data/input/leads_training.csv",
+  "as_of": "2026-10-24",
+  "total_records": 29,
+  "processed_records": 29,
+  "qualified": 5,
+  "rejected": 1,
+  "common_rejection_reasons": [
+    {
+      "reason": "Industry has no mapped target fit",
+      "count": 1
+    },
+    {
+      "reason": "No interaction within the 90-day recency window",
+      "count": 1
+    },
+    {
+      "reason": "Source provides no mapped intent points",
+      "count": 1
+    }
+  ],
+  "review": 23,
+  "qualified_percent": 17.2,
+  "rejected_percent": 3.4,
+  "review_percent": 79.3,
+  "ai_enabled": false,
+  "ai_batches_attempted": 0,
+  "ai_batches_failed": 0,
+  "ai_retries": 0,
+  "ai_errors": [],
+  "ingestion_warnings": [],
+  "duration_ms": 14
+}

@@ -1,0 +1,37 @@
+{
+  "input_file": "/home/runner/workspace/data/input/leads_full_scale_100.csv",
+  "as_of": "2026-10-24",
+  "total_records": 100,
+  "processed_records": 100,
+  "qualified": 25,
+  "rejected": 3,
+  "common_rejection_reasons": [
+    {
+      "reason": "Industry has no mapped target fit",
+      "count": 3
+    },
+    {
+      "reason": "No interaction within the 90-day recency window",
+      "count": 3
+    },
+    {
+      "reason": "Source provides no mapped intent points",
+      "count": 3
+    },
+    {
+      "reason": "Company size outside core target range",
+      "count": 1
+    }
+  ],
+  "review": 72,
+  "qualified_percent": 25,
+  "rejected_percent": 3,
+  "review_percent": 72,
+  "ai_enabled": false,
+  "ai_batches_attempted": 0,
+  "ai_batches_failed": 0,
+  "ai_retries": 0,
+  "ai_errors": [],
+  "ingestion_warnings": [],
+  "duration_ms": 12
+}

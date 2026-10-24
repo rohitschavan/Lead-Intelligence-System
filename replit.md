@@ -1,9 +1,13 @@
-# [Project name]
+# Lead Intelligence System
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A CLI that qualifies lead CSVs with a deterministic rubric, optional batched Ollama-compatible AI enrichment, and JSON/CSV reports.
 
 ## Run & Operate
 
+- `pnpm --filter @workspace/scripts lead-intelligence -- --input data/input/leads_full_scale_100.csv` — process the 100-lead sample offline
+- Add `--ai` to use a local Ollama or other OpenAI-compatible endpoint
+- `pnpm --filter @workspace/scripts test` — run CLI unit tests
+- `pnpm --filter @workspace/scripts typecheck` — typecheck scripts package
 - `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
@@ -22,15 +26,21 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `scripts/src/lead-intelligence/` — CLI, CSV ingestion, rubric, batched AI enrichment, reporting, and tests
+- `data/input/` — the original training, test, and full-scale lead CSVs
+- `docs/RUBRIC.md` — scoring assumptions and decision thresholds
+- `docs/reference/` — user-provided brief, planning notes, and dataset documentation
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- Numeric scores and final decisions are deterministic; AI enrichment only drafts explanations and outreach.
+- AI calls are opt-in and default to the local Ollama OpenAI-compatible endpoint, so offline runs need no key and do not transmit lead data externally.
+- Every parsed row receives an ID based on its input row, and batch failures preserve the scored records with visible fallback status.
+- Rubric outcomes are assumptions because the sample CSVs have no ground-truth labels.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+The CLI reads clean or incomplete lead CSVs, scores each record, routes uncertain records to human review, and generates priority/review/rejection queues with summary statistics and qualified-lead outreach examples.
 
 ## User preferences
 

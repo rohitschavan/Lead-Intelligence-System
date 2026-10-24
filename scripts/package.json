@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "hello": "tsx ./src/hello.ts",
+    "lead-intelligence": "tsx ./src/lead-intelligence/cli.ts",
+    "test": "tsx --test ./src/lead-intelligence/*.test.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "devDependencies": {
