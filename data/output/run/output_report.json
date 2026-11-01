@@ -1,0 +1,3568 @@
+{
+  "summary": {
+    "input_file": "/Users/rohitchavan/Downloads/IITR Project/Lead-Intelligence-System/data/input/leads_full_scale_100.csv",
+    "as_of": "2026-10-24",
+    "total_records": 100,
+    "processed_records": 100,
+    "qualified": 25,
+    "rejected": 3,
+    "common_rejection_reasons": [
+      {
+        "reason": "Industry has no mapped target fit",
+        "count": 3
+      },
+      {
+        "reason": "No interaction within the 90-day recency window",
+        "count": 3
+      },
+      {
+        "reason": "Source provides no mapped intent points",
+        "count": 3
+      },
+      {
+        "reason": "Company size outside core target range",
+        "count": 1
+      }
+    ],
+    "review": 72,
+    "qualified_percent": 25,
+    "rejected_percent": 3,
+    "review_percent": 72,
+    "ai_enabled": true,
+    "ai_batches_attempted": 10,
+    "ai_batches_failed": 6,
+    "ai_retries": 16,
+    "ai_errors": [
+      "Batch 1: The model response did not include every lead in the batch.",
+      "Batch 2: The model response did not include every lead in the batch.",
+      "Batch 3: The model response did not include every lead in the batch.",
+      "Batch 6: The model response did not include every lead in the batch.",
+      "Batch 8: The model response did not include every lead in the batch.",
+      "Batch 10: The model returned an unknown, duplicate, or incomplete lead ID."
+    ],
+    "ingestion_warnings": [],
+    "duration_ms": 233984
+  },
+  "rubric": {
+    "weights": {
+      "company_size_fit": 3,
+      "industry_fit": 2,
+      "source_intent": 2,
+      "engagement_recency": 2,
+      "data_confidence": 1
+    },
+    "thresholds": {
+      "qualified_min_score": 7,
+      "rejected_max_score": 3
+    },
+    "assumptions": "The rubric is a documented business assumption. The supplied datasets contain no conversion outcomes or qualification ground truth."
+  },
+  "records": [
+    {
+      "lead_id": "lead_0001",
+      "name": "Alice Chen",
+      "company": "CloudScale AI",
+      "company_size": "50",
+      "industry": "SaaS",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2024-01-15",
+      "score": 8,
+      "decision": "qualified",
+      "priority": "high",
+      "priority_rank": 1,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 2,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 8/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": "Hi Alice, I noticed CloudScale AI and your work in SaaS. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0002",
+      "name": "Bob Rodriguez",
+      "company": "TechVentures Inc",
+      "company_size": "8",
+      "industry": "SaaS",
+      "source": "LinkedIn outreach",
+      "last_interaction_date": "2024-01-20",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 1,
+        "industry_fit": 2,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 1/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0003",
+      "name": "Carol Singh",
+      "company": "National Bank Corp",
+      "company_size": "5000",
+      "industry": "Finance",
+      "source": "Content download",
+      "last_interaction_date": "2023-12-01",
+      "score": 4,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 2,
+        "industry_fit": 1,
+        "source_intent": 0,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 2/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 0/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 4/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0004",
+      "name": "David Moore",
+      "company": "StartupXYZ",
+      "company_size": "3",
+      "industry": "SaaS",
+      "source": "Referral",
+      "last_interaction_date": "2024-01-18",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 1,
+        "industry_fit": 2,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 1/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0005",
+      "name": "Emma Thompson",
+      "company": "RetailWorks Solutions",
+      "company_size": "200",
+      "industry": "Retail",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2023-11-10",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Retail\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Retail\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0006",
+      "name": "Frank Liu",
+      "company": "Healthcare Systems Ltd",
+      "company_size": "1200",
+      "industry": "Healthcare",
+      "source": "Sales call",
+      "last_interaction_date": "2024-01-12",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 2,
+        "industry_fit": 1,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 2/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0007",
+      "name": "Grace Lee",
+      "company": "Manufacturing Co",
+      "company_size": "450",
+      "industry": "Manufacturing",
+      "source": "Webinar attendee",
+      "last_interaction_date": "2023-10-05",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 1,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0008",
+      "name": "Henry Park",
+      "company": "EdTech Innovations",
+      "company_size": "75",
+      "industry": "EdTech",
+      "source": "Content download",
+      "last_interaction_date": "2024-01-14",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 2,
+        "source_intent": 0,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 0/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0009",
+      "name": "Iris Patel",
+      "company": "Logistics Global",
+      "company_size": "800",
+      "industry": "Logistics",
+      "source": "LinkedIn outreach",
+      "last_interaction_date": "2023-09-20",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 2,
+        "industry_fit": 1,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 2/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0010",
+      "name": "Jack White",
+      "company": "Digital Marketing Agency",
+      "company_size": "120",
+      "industry": "Marketing",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2024-01-19",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Marketing\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Marketing\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0011",
+      "name": "Karen Miller",
+      "company": "InsurancePro",
+      "company_size": "600",
+      "industry": "Insurance",
+      "source": "Sales call",
+      "last_interaction_date": "2023-12-15",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 2,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 2/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Insurance\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Insurance\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0012",
+      "name": "Leon Chen",
+      "company": "FinTech Startup",
+      "company_size": "25",
+      "industry": "FinTech",
+      "source": "Referral",
+      "last_interaction_date": "2024-01-17",
+      "score": 8,
+      "decision": "qualified",
+      "priority": "high",
+      "priority_rank": 2,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 2,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 8/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": "Hi Leon, I noticed FinTech Startup and your work in FinTech. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0013",
+      "name": "Maya Desai",
+      "company": "Agricultural Tech",
+      "company_size": "45",
+      "industry": "Agriculture",
+      "source": "Content download",
+      "last_interaction_date": "2024-01-16",
+      "score": 4,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 0,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 0/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Agriculture\" is not mapped in the rubric.",
+        "Total 4/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Agriculture\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0014",
+      "name": "Nathan Brooks",
+      "company": "Enterprise Solutions Corp",
+      "company_size": "3500",
+      "industry": "Software",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2024-01-13",
+      "score": 7,
+      "decision": "qualified",
+      "priority": "medium",
+      "priority_rank": 11,
+      "factor_scores": {
+        "company_size_fit": 2,
+        "industry_fit": 2,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 2/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 7/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": "Hi Nathan, I noticed Enterprise Solutions Corp and your work in Software. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0015",
+      "name": "Olivia Garcia",
+      "company": "Local Restaurant Group",
+      "company_size": "12",
+      "industry": "Hospitality",
+      "source": "LinkedIn outreach",
+      "last_interaction_date": "2023-08-30",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Hospitality\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Hospitality\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0016",
+      "name": "Pamela White",
+      "company": "Pharma Research Inc",
+      "company_size": "2200",
+      "industry": "Pharmaceuticals",
+      "source": "Sales call",
+      "last_interaction_date": "2023-11-25",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 2,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 2/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Pharmaceuticals\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Pharmaceuticals\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0017",
+      "name": "Quinn Matthews",
+      "company": "Consulting Firm",
+      "company_size": "180",
+      "industry": "Consulting",
+      "source": "Webinar attendee",
+      "last_interaction_date": "2024-01-11",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 1,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0018",
+      "name": "Rachel Kim",
+      "company": "Government Agency",
+      "company_size": "800",
+      "industry": "Government",
+      "source": "Content download",
+      "last_interaction_date": "2023-12-10",
+      "score": 3,
+      "decision": "rejected",
+      "priority": "low",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 2,
+        "industry_fit": 0,
+        "source_intent": 0,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 2/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 0/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Government\" is not mapped in the rubric.",
+        "Total 3/10; rejected under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [
+        "Industry \"Government\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0019",
+      "name": "Samuel Lee",
+      "company": "Cybersecurity Startup",
+      "company_size": "60",
+      "industry": "Cybersecurity",
+      "source": "Referral",
+      "last_interaction_date": "2024-01-09",
+      "score": 8,
+      "decision": "qualified",
+      "priority": "high",
+      "priority_rank": 3,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 2,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 8/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": "Hi Samuel, I noticed Cybersecurity Startup and your work in Cybersecurity. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0020",
+      "name": "Tina Patel",
+      "company": "Energy Solutions",
+      "company_size": "900",
+      "industry": "Energy",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2023-10-18",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 2,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 2/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Energy\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Energy\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0021",
+      "name": "Uma Singh",
+      "company": "Event Planning Co",
+      "company_size": "35",
+      "industry": "Events",
+      "source": "LinkedIn outreach",
+      "last_interaction_date": "2024-01-08",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Events\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Events\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0022",
+      "name": "Victor Moore",
+      "company": "Real Estate Platform",
+      "company_size": "250",
+      "industry": "Real Estate",
+      "source": "Sales call",
+      "last_interaction_date": "2024-01-06",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Real Estate\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Real Estate\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0023",
+      "name": "Wendy Zhang",
+      "company": "Fashion Brand",
+      "company_size": "400",
+      "industry": "Retail",
+      "source": "Content download",
+      "last_interaction_date": "2024-01-05",
+      "score": 4,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 0,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 0/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Retail\" is not mapped in the rubric.",
+        "Total 4/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Retail\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0024",
+      "name": "Xavier Lopez",
+      "company": "Data Analytics Firm",
+      "company_size": "110",
+      "industry": "Analytics",
+      "source": "Webinar attendee",
+      "last_interaction_date": "2023-12-22",
+      "score": 7,
+      "decision": "qualified",
+      "priority": "medium",
+      "priority_rank": 12,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 2,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 7/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": "Hi Xavier, I noticed Data Analytics Firm and your work in Analytics. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0025",
+      "name": "Yuki Tanaka",
+      "company": "Travel Technology",
+      "company_size": "55",
+      "industry": "Travel",
+      "source": "Referral",
+      "last_interaction_date": "2024-01-04",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Travel\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Travel\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0026",
+      "name": "Zara Hassan",
+      "company": "Education Institution",
+      "company_size": "600",
+      "industry": "Education",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2023-12-05",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 2,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 2/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Education\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Education\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0027",
+      "name": "Aaron Benjamin",
+      "company": "Supply Chain Co",
+      "company_size": "320",
+      "industry": "Supply Chain",
+      "source": "LinkedIn outreach",
+      "last_interaction_date": "2024-01-02",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Supply Chain\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Supply Chain\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0028",
+      "name": "Bella Cross",
+      "company": "Legal Services Firm",
+      "company_size": "90",
+      "industry": "Legal",
+      "source": "Sales call",
+      "last_interaction_date": "2023-11-30",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Legal\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Legal\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0029",
+      "name": "Cassandra Jones",
+      "company": "Media & Entertainment",
+      "company_size": "150",
+      "industry": "Media",
+      "source": "Content download",
+      "last_interaction_date": "2024-01-01",
+      "score": 4,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 0,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 0/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Media\" is not mapped in the rubric.",
+        "Total 4/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Media\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0030",
+      "name": "Derek Johnson",
+      "company": "Cloud Infrastructure",
+      "company_size": "200",
+      "industry": "SaaS",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2024-01-19",
+      "score": 8,
+      "decision": "qualified",
+      "priority": "high",
+      "priority_rank": 4,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 2,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 8/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": "Hi Derek, I noticed Cloud Infrastructure and your work in SaaS. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0031",
+      "name": "Ethan Smith",
+      "company": "Mobile Development",
+      "company_size": "40",
+      "industry": "Software",
+      "source": "LinkedIn outreach",
+      "last_interaction_date": "2024-01-17",
+      "score": 7,
+      "decision": "qualified",
+      "priority": "medium",
+      "priority_rank": 13,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 2,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 7/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "",
+      "ai_status": "generated",
+      "outreach_message": "Hi Ethan, I noticed you're interested in mobile development. How can I help you explore this further?"
+    },
+    {
+      "lead_id": "lead_0032",
+      "name": "Fiona Murphy",
+      "company": "Telecommunications",
+      "company_size": "2500",
+      "industry": "Telecom",
+      "source": "Sales call",
+      "last_interaction_date": "2023-11-15",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 2,
+        "industry_fit": 1,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 2/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [],
+      "ai_reasoning": "",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0033",
+      "name": "Gabriella Torres",
+      "company": "Beauty & Cosmetics",
+      "company_size": "120",
+      "industry": "Consumer",
+      "source": "Webinar attendee",
+      "last_interaction_date": "2024-01-14",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Consumer\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Consumer\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0034",
+      "name": "Hassan Khalil",
+      "company": "Oil & Gas Corp",
+      "company_size": "8000",
+      "industry": "Energy",
+      "source": "Content download",
+      "last_interaction_date": "2023-09-01",
+      "score": 2,
+      "decision": "rejected",
+      "priority": "low",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 1,
+        "industry_fit": 0,
+        "source_intent": 0,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 1/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 0/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Energy\" is not mapped in the rubric.",
+        "Total 2/10; rejected under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [
+        "Industry \"Energy\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0035",
+      "name": "Isabella Romano",
+      "company": "Luxury Hotels",
+      "company_size": "350",
+      "industry": "Hospitality",
+      "source": "Referral",
+      "last_interaction_date": "2024-01-16",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Hospitality\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Hospitality\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0036",
+      "name": "James Wilson",
+      "company": "Property Management",
+      "company_size": "180",
+      "industry": "Real Estate",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2024-01-18",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Real Estate\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Real Estate\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0037",
+      "name": "Katherine Lee",
+      "company": "Artificial Intelligence Lab",
+      "company_size": "65",
+      "industry": "AI/ML",
+      "source": "LinkedIn outreach",
+      "last_interaction_date": "2024-01-13",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"AI/ML\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"AI/ML\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0038",
+      "name": "Liam O'Connor",
+      "company": "Venture Capital Fund",
+      "company_size": "40",
+      "industry": "Finance",
+      "source": "Sales call",
+      "last_interaction_date": "2024-01-10",
+      "score": 7,
+      "decision": "qualified",
+      "priority": "medium",
+      "priority_rank": 14,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 1,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 7/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "",
+      "ai_status": "generated",
+      "outreach_message": "Hi Liam, I wanted to follow up on our previous conversation about venture capital. Can you tell me more about your current investments?"
+    },
+    {
+      "lead_id": "lead_0039",
+      "name": "Mona Patel",
+      "company": "Blockchain Startup",
+      "company_size": "22",
+      "industry": "Cryptocurrency",
+      "source": "Referral",
+      "last_interaction_date": "2024-01-15",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Cryptocurrency\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Cryptocurrency\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0040",
+      "name": "Nicholas Anderson",
+      "company": "Sports Management",
+      "company_size": "85",
+      "industry": "Sports",
+      "source": "Content download",
+      "last_interaction_date": "2023-12-20",
+      "score": 4,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 0,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 0/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Sports\" is not mapped in the rubric.",
+        "Total 4/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Sports\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0041",
+      "name": "Olivia Martinez",
+      "company": "Renewable Energy Corp",
+      "company_size": "600",
+      "industry": "Energy",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2024-01-12",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 2,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 2/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Energy\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Energy\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "No explanation provided",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0042",
+      "name": "Patricia Brown",
+      "company": "Biotechnology Research",
+      "company_size": "250",
+      "industry": "Biotech",
+      "source": "LinkedIn outreach",
+      "last_interaction_date": "2024-01-09",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Biotech\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Biotech\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "No explanation provided",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0043",
+      "name": "Quincy Adams",
+      "company": "Streaming Service",
+      "company_size": "3000",
+      "industry": "Media",
+      "source": "Sales call",
+      "last_interaction_date": "2023-10-30",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 2,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 2/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Media\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Media\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "No explanation provided",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0044",
+      "name": "Rebecca Green",
+      "company": "Waste Management",
+      "company_size": "1100",
+      "industry": "Environmental",
+      "source": "Webinar attendee",
+      "last_interaction_date": "2024-01-08",
+      "score": 4,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 2,
+        "industry_fit": 0,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 2/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Environmental\" is not mapped in the rubric.",
+        "Total 4/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Environmental\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "No explanation provided",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0045",
+      "name": "Steven Chen",
+      "company": "Robotics Company",
+      "company_size": "75",
+      "industry": "Manufacturing",
+      "source": "Referral",
+      "last_interaction_date": "2024-01-07",
+      "score": 7,
+      "decision": "qualified",
+      "priority": "medium",
+      "priority_rank": 15,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 1,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 7/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "Hi Steven, I saw that you're in the manufacturing industry. Our robotics company might be able to help you with innovative solutions. Can I schedule a call to discuss?",
+      "ai_status": "generated",
+      "outreach_message": "Hi Steven, I noticed Robotics Company and your work in Manufacturing. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0046",
+      "name": "Sophia Moretti",
+      "company": "Wine Distribution",
+      "company_size": "95",
+      "industry": "Retail",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2024-01-11",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Retail\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Retail\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "Hi Sophia, I noticed you're interested in our renewable energy solutions. How can I assist you today?",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0047",
+      "name": "Theo Papadopoulos",
+      "company": "Construction Tech",
+      "company_size": "150",
+      "industry": "Construction",
+      "source": "Content download",
+      "last_interaction_date": "2024-01-06",
+      "score": 4,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 0,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 0/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Construction\" is not mapped in the rubric.",
+        "Total 4/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Construction\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "No explanation provided",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0048",
+      "name": "Ursula Hoffmann",
+      "company": "Insurance Tech",
+      "company_size": "130",
+      "industry": "InsurTech",
+      "source": "LinkedIn outreach",
+      "last_interaction_date": "2024-01-05",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"InsurTech\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"InsurTech\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "No explanation provided",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0049",
+      "name": "Victoria Summers",
+      "company": "Transportation Logistics",
+      "company_size": "550",
+      "industry": "Logistics",
+      "source": "Sales call",
+      "last_interaction_date": "2023-12-28",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 2,
+        "industry_fit": 1,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 2/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [],
+      "ai_reasoning": "Hi Victoria, I noticed you're in the logistics industry. Our transportation services might be a good fit for your company. Can I schedule a call to discuss?",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0050",
+      "name": "William Knight",
+      "company": "Pharmaceutical Distribution",
+      "company_size": "400",
+      "industry": "Healthcare",
+      "source": "Referral",
+      "last_interaction_date": "2024-01-04",
+      "score": 7,
+      "decision": "qualified",
+      "priority": "medium",
+      "priority_rank": 16,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 1,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 7/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "Hi William, I saw that you're in the pharmaceutical distribution industry. Our company might be able to help you with innovative solutions. Would you like to learn more?",
+      "ai_status": "generated",
+      "outreach_message": "Hi William, I noticed Pharmaceutical Distribution and your work in Healthcare. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0051",
+      "name": "Xander Brooks",
+      "company": "Virtual Reality Studios",
+      "company_size": "45",
+      "industry": "Entertainment",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2024-01-03",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Entertainment\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Entertainment\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0052",
+      "name": "Yasmine Aziz",
+      "company": "Pet Care Services",
+      "company_size": "28",
+      "industry": "Consumer Services",
+      "source": "LinkedIn outreach",
+      "last_interaction_date": "2024-01-02",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Consumer Services\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Consumer Services\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0053",
+      "name": "Zachary Pierce",
+      "company": "Office Furniture",
+      "company_size": "175",
+      "industry": "Retail",
+      "source": "Webinar attendee",
+      "last_interaction_date": "2023-12-18",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Retail\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Retail\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0054",
+      "name": "Amelia Davis",
+      "company": "Cybersecurity Consulting",
+      "company_size": "95",
+      "industry": "Cybersecurity",
+      "source": "Sales call",
+      "last_interaction_date": "2024-01-20",
+      "score": 8,
+      "decision": "qualified",
+      "priority": "high",
+      "priority_rank": 5,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 2,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 8/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": "Hi Amelia, I noticed Cybersecurity Consulting and your work in Cybersecurity. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0055",
+      "name": "Bradley Foster",
+      "company": "Cloud Storage",
+      "company_size": "800",
+      "industry": "SaaS",
+      "source": "Content download",
+      "last_interaction_date": "2024-01-19",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 2,
+        "industry_fit": 2,
+        "source_intent": 0,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 2/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 0/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0056",
+      "name": "Chloe Mitchell",
+      "company": "Supply Chain Analytics",
+      "company_size": "60",
+      "industry": "Software",
+      "source": "Referral",
+      "last_interaction_date": "2024-01-18",
+      "score": 8,
+      "decision": "qualified",
+      "priority": "high",
+      "priority_rank": 6,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 2,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 8/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": "Hi Chloe, I noticed Supply Chain Analytics and your work in Software. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0057",
+      "name": "Dominic Wheeler",
+      "company": "Payment Processing",
+      "company_size": "500",
+      "industry": "FinTech",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2024-01-17",
+      "score": 8,
+      "decision": "qualified",
+      "priority": "high",
+      "priority_rank": 7,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 2,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 8/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": "Hi Dominic, I noticed Payment Processing and your work in FinTech. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0058",
+      "name": "Evelyn Richardson",
+      "company": "Human Resources Tech",
+      "company_size": "70",
+      "industry": "HR Tech",
+      "source": "LinkedIn outreach",
+      "last_interaction_date": "2024-01-16",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"HR Tech\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"HR Tech\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0059",
+      "name": "Franklin Hayes",
+      "company": "Accounting Software",
+      "company_size": "220",
+      "industry": "Software",
+      "source": "Sales call",
+      "last_interaction_date": "2024-01-15",
+      "score": 8,
+      "decision": "qualified",
+      "priority": "high",
+      "priority_rank": 8,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 2,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 8/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": "Hi Franklin, I noticed Accounting Software and your work in Software. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0060",
+      "name": "Gina Reeves",
+      "company": "E-commerce Platform",
+      "company_size": "140",
+      "industry": "SaaS",
+      "source": "Webinar attendee",
+      "last_interaction_date": "2024-01-14",
+      "score": 7,
+      "decision": "qualified",
+      "priority": "medium",
+      "priority_rank": 17,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 2,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 7/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": "Hi Gina, I noticed E-commerce Platform and your work in SaaS. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0061",
+      "name": "Harrison Scott",
+      "company": "Commercial Real Estate",
+      "company_size": "900",
+      "industry": "Real Estate",
+      "source": "Content download",
+      "last_interaction_date": "2024-01-13",
+      "score": 3,
+      "decision": "rejected",
+      "priority": "low",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 2,
+        "industry_fit": 0,
+        "source_intent": 0,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 2/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 0/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Real Estate\" is not mapped in the rubric.",
+        "Total 3/10; rejected under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [
+        "Industry \"Real Estate\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "Lead not qualified",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0062",
+      "name": "Iris Wagner",
+      "company": "Telecommunications Equipment",
+      "company_size": "2000",
+      "industry": "Telecom",
+      "source": "Referral",
+      "last_interaction_date": "2024-01-12",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 2,
+        "industry_fit": 1,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 2/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [],
+      "ai_reasoning": "Lead qualified",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0063",
+      "name": "Jerome Long",
+      "company": "Logistics Optimization",
+      "company_size": "85",
+      "industry": "Software",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2024-01-11",
+      "score": 8,
+      "decision": "qualified",
+      "priority": "high",
+      "priority_rank": 9,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 2,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 8/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "Lead qualified",
+      "ai_status": "generated",
+      "outreach_message": "Hi Jerome, our software can help streamline logistics optimization. Would you be open to a quick demo?"
+    },
+    {
+      "lead_id": "lead_0064",
+      "name": "Kennedy Owens",
+      "company": "Environmental Monitoring",
+      "company_size": "55",
+      "industry": "Climate Tech",
+      "source": "LinkedIn outreach",
+      "last_interaction_date": "2024-01-10",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Climate Tech\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Climate Tech\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "Lead not qualified",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0065",
+      "name": "Lauren Blake",
+      "company": "Medical Devices",
+      "company_size": "450",
+      "industry": "Healthcare",
+      "source": "Sales call",
+      "last_interaction_date": "2024-01-09",
+      "score": 7,
+      "decision": "qualified",
+      "priority": "medium",
+      "priority_rank": 18,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 1,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 7/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "Lead qualified",
+      "ai_status": "generated",
+      "outreach_message": "Hi Lauren, our medical device software can help improve patient outcomes. Would you like to learn more?"
+    },
+    {
+      "lead_id": "lead_0066",
+      "name": "Marcus Hunt",
+      "company": "Venture Studio",
+      "company_size": "35",
+      "industry": "Finance",
+      "source": "Webinar attendee",
+      "last_interaction_date": "2024-01-08",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 1,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [],
+      "ai_reasoning": "Lead not qualified",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0067",
+      "name": "Natalie Stone",
+      "company": "Fashion E-commerce",
+      "company_size": "110",
+      "industry": "Retail",
+      "source": "Content download",
+      "last_interaction_date": "2024-01-07",
+      "score": 4,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 0,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 0/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Retail\" is not mapped in the rubric.",
+        "Total 4/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Retail\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "Lead not qualified",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0068",
+      "name": "Oscar Rivera",
+      "company": "Warehouse Automation",
+      "company_size": "300",
+      "industry": "Logistics",
+      "source": "Referral",
+      "last_interaction_date": "2024-01-06",
+      "score": 7,
+      "decision": "qualified",
+      "priority": "medium",
+      "priority_rank": 19,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 1,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 7/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "Lead qualified",
+      "ai_status": "generated",
+      "outreach_message": "Hi Oscar, our warehouse automation software can help increase efficiency. Would you like to schedule a demo?"
+    },
+    {
+      "lead_id": "lead_0069",
+      "name": "Penny Walsh",
+      "company": "Mental Health Platform",
+      "company_size": "75",
+      "industry": "HealthTech",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2024-01-05",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"HealthTech\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"HealthTech\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "Lead not qualified",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0070",
+      "name": "Quinton Price",
+      "company": "Database Software",
+      "company_size": "250",
+      "industry": "Software",
+      "source": "LinkedIn outreach",
+      "last_interaction_date": "2024-01-04",
+      "score": 7,
+      "decision": "qualified",
+      "priority": "medium",
+      "priority_rank": 20,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 2,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 7/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "Lead qualified",
+      "ai_status": "generated",
+      "outreach_message": "Hi Quinton, our database software can help improve data management. Would you like to learn more?"
+    },
+    {
+      "lead_id": "lead_0071",
+      "name": "Ruby Chen",
+      "company": "Sustainable Fashion",
+      "company_size": "85",
+      "industry": "Retail",
+      "source": "Sales call",
+      "last_interaction_date": "2024-01-03",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Retail\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Retail\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0072",
+      "name": "Silas Brown",
+      "company": "Financial Advisory",
+      "company_size": "140",
+      "industry": "Finance",
+      "source": "Webinar attendee",
+      "last_interaction_date": "2024-01-02",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 1,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0073",
+      "name": "Tara Gonzalez",
+      "company": "Nutrition Tech",
+      "company_size": "50",
+      "industry": "HealthTech",
+      "source": "Content download",
+      "last_interaction_date": "2024-01-01",
+      "score": 4,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 0,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 0/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"HealthTech\" is not mapped in the rubric.",
+        "Total 4/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"HealthTech\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0074",
+      "name": "Ulysses Morgan",
+      "company": "Autonomous Vehicles",
+      "company_size": "600",
+      "industry": "Automotive",
+      "source": "Referral",
+      "last_interaction_date": "2023-12-31",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 2,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 2/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Automotive\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Automotive\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0075",
+      "name": "Veronica Adams",
+      "company": "Commercial Cleaning",
+      "company_size": "180",
+      "industry": "Business Services",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2023-12-30",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Business Services\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Business Services\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0076",
+      "name": "Walter Buchanan",
+      "company": "Construction Management",
+      "company_size": "320",
+      "industry": "Construction",
+      "source": "LinkedIn outreach",
+      "last_interaction_date": "2023-12-29",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Construction\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Construction\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0077",
+      "name": "Ximena Flores",
+      "company": "Gaming Studio",
+      "company_size": "95",
+      "industry": "Entertainment",
+      "source": "Sales call",
+      "last_interaction_date": "2023-12-28",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Entertainment\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Entertainment\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0078",
+      "name": "Yolanda Martinez",
+      "company": "Customer Support Platform",
+      "company_size": "110",
+      "industry": "SaaS",
+      "source": "Webinar attendee",
+      "last_interaction_date": "2023-12-27",
+      "score": 7,
+      "decision": "qualified",
+      "priority": "medium",
+      "priority_rank": 21,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 2,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 7/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": "Hi Yolanda, I noticed Customer Support Platform and your work in SaaS. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0079",
+      "name": "Zachary Coleman",
+      "company": "Landscaping Services",
+      "company_size": "42",
+      "industry": "Services",
+      "source": "Content download",
+      "last_interaction_date": "2023-12-26",
+      "score": 4,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 0,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 0/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Services\" is not mapped in the rubric.",
+        "Total 4/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Services\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0080",
+      "name": "Audrey Powell",
+      "company": "Dental Practice Management",
+      "company_size": "150",
+      "industry": "Healthcare",
+      "source": "Referral",
+      "last_interaction_date": "2023-12-25",
+      "score": 7,
+      "decision": "qualified",
+      "priority": "medium",
+      "priority_rank": 22,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 1,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 7/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": "Hi Audrey, I noticed Dental Practice Management and your work in Healthcare. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0081",
+      "name": "Bryson Hart",
+      "company": "Climate Analytics",
+      "company_size": "70",
+      "industry": "Climate Tech",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2023-12-24",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Climate Tech\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Climate Tech\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "Review decision",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0082",
+      "name": "Cecilia Santos",
+      "company": "Freight Forwarding",
+      "company_size": "400",
+      "industry": "Logistics",
+      "source": "LinkedIn outreach",
+      "last_interaction_date": "2023-12-23",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 1,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [],
+      "ai_reasoning": "Review decision",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0083",
+      "name": "Daisy Newton",
+      "company": "Wedding Planning Tech",
+      "company_size": "38",
+      "industry": "Events",
+      "source": "Sales call",
+      "last_interaction_date": "2023-12-22",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Events\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Events\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "Review decision",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0084",
+      "name": "Ezra Fox",
+      "company": "Veterinary Practice",
+      "company_size": "65",
+      "industry": "Healthcare",
+      "source": "Webinar attendee",
+      "last_interaction_date": "2023-12-21",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 1,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [],
+      "ai_reasoning": "Review decision",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0085",
+      "name": "Finn O'Brien",
+      "company": "Craft Beverage",
+      "company_size": "85",
+      "industry": "Consumer",
+      "source": "Content download",
+      "last_interaction_date": "2023-12-20",
+      "score": 4,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 0,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 0/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Consumer\" is not mapped in the rubric.",
+        "Total 4/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Consumer\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "Review decision",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0086",
+      "name": "Gemma Hart",
+      "company": "Public Relations Firm",
+      "company_size": "75",
+      "industry": "Marketing",
+      "source": "Referral",
+      "last_interaction_date": "2023-12-19",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Marketing\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Marketing\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "Review decision",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0087",
+      "name": "Harper Knight",
+      "company": "Retail Inventory",
+      "company_size": "140",
+      "industry": "Retail",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2023-12-18",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Retail\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Retail\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "Review decision",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0088",
+      "name": "Iris Monroe",
+      "company": "Corporate Training",
+      "company_size": "110",
+      "industry": "EdTech",
+      "source": "LinkedIn outreach",
+      "last_interaction_date": "2023-12-17",
+      "score": 7,
+      "decision": "qualified",
+      "priority": "medium",
+      "priority_rank": 23,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 2,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 7/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "Qualified decision",
+      "ai_status": "generated",
+      "outreach_message": "Hi Iris, hope you're doing well. We noticed you're interested in Corporate Training. How can we help you develop your edtech skills?"
+    },
+    {
+      "lead_id": "lead_0089",
+      "name": "Julian Parks",
+      "company": "Hotel Management",
+      "company_size": "250",
+      "industry": "Hospitality",
+      "source": "Sales call",
+      "last_interaction_date": "2023-12-16",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Hospitality\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Hospitality\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "Review decision",
+      "ai_status": "generated",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0090",
+      "name": "Kevin Grant",
+      "company": "Knowledge Management",
+      "company_size": "125",
+      "industry": "Software",
+      "source": "Webinar attendee",
+      "last_interaction_date": "2023-12-15",
+      "score": 7,
+      "decision": "qualified",
+      "priority": "medium",
+      "priority_rank": 24,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 2,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 7/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "Qualified decision",
+      "ai_status": "generated",
+      "outreach_message": "Hi Kevin, hope you're doing well. We noticed you attended a webinar on Knowledge Management. How can we help you apply your expertise?"
+    },
+    {
+      "lead_id": "lead_0091",
+      "name": "Louisa Blake",
+      "company": "Interior Design Services",
+      "company_size": "28",
+      "industry": "Services",
+      "source": "Content download",
+      "last_interaction_date": "2023-12-14",
+      "score": 4,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 0,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 0/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Services\" is not mapped in the rubric.",
+        "Total 4/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Services\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0092",
+      "name": "Marcus Stewart",
+      "company": "Cyber Insurance",
+      "company_size": "220",
+      "industry": "Insurance",
+      "source": "Referral",
+      "last_interaction_date": "2023-12-13",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Insurance\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Insurance\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0093",
+      "name": "Natasha Volkov",
+      "company": "Import Export Trading",
+      "company_size": "350",
+      "industry": "Trade",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2023-12-12",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Trade\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Trade\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0094",
+      "name": "Oliver Thorne",
+      "company": "Museum Management",
+      "company_size": "65",
+      "industry": "Cultural",
+      "source": "LinkedIn outreach",
+      "last_interaction_date": "2023-12-11",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Cultural\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Cultural\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0095",
+      "name": "Priya Patel",
+      "company": "Network Security",
+      "company_size": "180",
+      "industry": "Cybersecurity",
+      "source": "Sales call",
+      "last_interaction_date": "2023-12-10",
+      "score": 8,
+      "decision": "qualified",
+      "priority": "high",
+      "priority_rank": 10,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 2,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 2/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 8/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": "Hi Priya, I noticed Network Security and your work in Cybersecurity. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0096",
+      "name": "Quinn Murphy",
+      "company": "Volunteer Management",
+      "company_size": "40",
+      "industry": "NonProfit",
+      "source": "Webinar attendee",
+      "last_interaction_date": "2023-12-09",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"NonProfit\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"NonProfit\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0097",
+      "name": "Raymond Grant",
+      "company": "Logistics Tracking",
+      "company_size": "300",
+      "industry": "Logistics",
+      "source": "Content download",
+      "last_interaction_date": "2023-12-08",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 1,
+        "source_intent": 0,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 0/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0098",
+      "name": "Sophie Lawrence",
+      "company": "Laboratory Information",
+      "company_size": "170",
+      "industry": "Healthcare",
+      "source": "Referral",
+      "last_interaction_date": "2023-12-07",
+      "score": 7,
+      "decision": "qualified",
+      "priority": "medium",
+      "priority_rank": 25,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 1,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 1/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Total 7/10; qualified under rubric thresholds."
+      ],
+      "review_required": false,
+      "validation_warnings": [],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": "Hi Sophie, I noticed Laboratory Information and your work in Healthcare. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0099",
+      "name": "Tobias Wright",
+      "company": "Vehicle Tracking",
+      "company_size": "220",
+      "industry": "Automotive",
+      "source": "Inbound demo request",
+      "last_interaction_date": "2023-12-06",
+      "score": 6,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 2,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 2/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Automotive\" is not mapped in the rubric.",
+        "Total 6/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Automotive\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    },
+    {
+      "lead_id": "lead_0100",
+      "name": "Uriel Reyes",
+      "company": "Waste Reduction",
+      "company_size": "95",
+      "industry": "Environmental",
+      "source": "LinkedIn outreach",
+      "last_interaction_date": "2023-12-05",
+      "score": 5,
+      "decision": "review",
+      "priority": "medium",
+      "priority_rank": null,
+      "factor_scores": {
+        "company_size_fit": 3,
+        "industry_fit": 0,
+        "source_intent": 1,
+        "engagement_recency": 0,
+        "data_confidence": 1
+      },
+      "reasoning": [
+        "Company size fit: 3/3.",
+        "Industry fit: 0/2.",
+        "Source intent: 1/2.",
+        "Engagement recency: 0/2.",
+        "Data confidence: 1/1.",
+        "Review: Industry \"Environmental\" is not mapped in the rubric.",
+        "Total 5/10; review under rubric thresholds."
+      ],
+      "review_required": true,
+      "validation_warnings": [
+        "Industry \"Environmental\" is not mapped in the rubric."
+      ],
+      "ai_reasoning": "AI enrichment unavailable; deterministic rubric reasoning is shown.",
+      "ai_status": "fallback",
+      "outreach_message": null
+    }
+  ],
+  "sample_outreach": [
+    {
+      "lead_id": "lead_0001",
+      "name": "Alice Chen",
+      "company": "CloudScale AI",
+      "message": "Hi Alice, I noticed CloudScale AI and your work in SaaS. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0012",
+      "name": "Leon Chen",
+      "company": "FinTech Startup",
+      "message": "Hi Leon, I noticed FinTech Startup and your work in FinTech. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0019",
+      "name": "Samuel Lee",
+      "company": "Cybersecurity Startup",
+      "message": "Hi Samuel, I noticed Cybersecurity Startup and your work in Cybersecurity. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0030",
+      "name": "Derek Johnson",
+      "company": "Cloud Infrastructure",
+      "message": "Hi Derek, I noticed Cloud Infrastructure and your work in SaaS. Would a short conversation about how we support teams like yours be useful?"
+    },
+    {
+      "lead_id": "lead_0054",
+      "name": "Amelia Davis",
+      "company": "Cybersecurity Consulting",
+      "message": "Hi Amelia, I noticed Cybersecurity Consulting and your work in Cybersecurity. Would a short conversation about how we support teams like yours be useful?"
+    }
+  ]
+}
